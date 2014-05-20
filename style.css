@@ -1,0 +1,21 @@
+body { margin: 0; padding: 0; background: url(img/back.jpg);}
+canvas { display: none; margin: 0 auto; background: url(img/back.jpg); }
+
+img{width:100%;height:auto;}
+#b_bubble,#b_shooter{position: absolute;left:50px;top:120px;width:200px;transition: all 2s;-moz-transition: all 2s;}
+#b_bubble{top:60px;left:30px;animation: antop 2s infinite 1s linear;}
+#start{left: 65px;position: absolute; top: 200px; width: 200px;}
+@keyframes antop{
+    0%{top:60px;}
+    25%{top:40px;}
+    50%{top:60px;}
+    75%{top:20px;}
+    100%{top:60px;}
+}
+@keyframes anleft{
+    0%{margin-left:0px;}
+    25%{margin-left:40px;}
+    50%{margin-left:0px;}
+    75%{margin-left:20px;}
+    100%{margin-left:0px;}
+}
