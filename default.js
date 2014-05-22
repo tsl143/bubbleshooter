@@ -1,9 +1,7 @@
 var global_level;
 var global_timer;
     function level(){
-        document.getElementById("b_bubble").style.display = "none"; 
-        document.getElementById("b_shooter").style.display = "none"; 
-        document.getElementById("start").style.display = "none"; 
+        document.getElementById("home").style.display = "none"; 
         document.getElementById("selector").style.display="block";
     }
     function initiate(lev){
@@ -16,16 +14,27 @@ var global_timer;
     }
     function shootresult(){
     	document.getElementById("playground").style.display = "none";
-    	alert("escaped"+POP.score.escaped);
-    	alert("hit"+POP.score.hit);
-    	alert("total"+(POP.score.escaped+POP.score.hit));
-    	document.getElementById("b_bubble").style.display = "block"; 
-        document.getElementById("b_shooter").style.display = "block"; 
-        document.getElementById("start").style.display = "block"; 
+        document.getElementById("home").style.display = "block"; 
+        document.getElementById("overlay").style.display = "block"; 
+        document.getElementById("popup").style.display = "block"; 
+        document.getElementById("popup").innerHTML= "<h3>Score</h3><div style='padding:20px;'>Total Hits: "+POP.score.hit+"<br/>Total Missed: "+POP.score.escaped+"</div>"; 
+        POP.score.taps= 0;
+        POP.score.hit= 0;
+        POP.score.escaped= 0;
+        POP.score.accuracy= 0;
+    	
+    }
+    function helpme(){
+        document.getElementById("overlay").style.display = "block"; 
+        document.getElementById("popup").style.display = "block"; 
+        document.getElementById("popup").innerHTML= "<h3>Instructions</h3><ol><li>Select Level</li><li>Shoot as many bubbles as you can </li><li>Total given time is 2 Minutes</li></ol>"; 
+    }
+    function hideit(){
+        document.getElementById("overlay").style.display = "none"; 
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("home").style.display = "block";
     }
 var img=document.getElementById("back");
-// http://paulirish.com/2011/requestanimationframe-for-smart-animating
-// shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       || 
           window.webkitRequestAnimationFrame || 
@@ -161,8 +170,8 @@ var POP = {
         }
 
         POP.Draw.text('Hit: ' + POP.score.hit, 20, 20, 14, '#fff');
-        POP.Draw.text('Lost: ' + POP.score.escaped, 20, 40, 14, '#fff');
-        POP.Draw.text('Precision: ' + POP.score.accuracy + '%', 20, 60, 14, '#fff');
+        POP.Draw.text('Missed: ' + POP.score.escaped, 220, 20, 14, '#fff');
+        //POP.Draw.text('Precision: ' + POP.score.accuracy + '%', 20, 60, 14, '#fff');
 
     },
 

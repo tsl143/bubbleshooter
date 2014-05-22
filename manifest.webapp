@@ -1,0 +1,15 @@
+{
+  "version": "1.1",	
+  "name": "Bubble Shooter",
+  "description": "An interactive game app, ENjoy shooting bubbles in various levels. Keep yourself engaged in your free time and also increase your precision.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon_128.png",
+    "60": "/img/icon_60.png"
+  },
+  "developer": {
+    "name": "Trishul",
+    "url": "http://about.me/trishul"
+  },
+  "default_locale": "en"
+}
