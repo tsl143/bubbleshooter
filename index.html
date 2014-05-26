@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, 
+    user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="home">
+    <div id="b_bubble"><img src="img/bubble.png" /></div>
+    <div id="b_shooter"><img src="img/shooter.png" /></div>
+    <div id="start" onclick="javascript:level()">
+        <img class="board" src="img/target.png" />
+        <img class="dart" src="img/dart.png" />
+    </div>
+    <img class="help" src="img/help.png" onclick="helpme();"/>
+    </div>
+    <div style="display: none;" id="selector" >
+        <div class="levels" id="l1" onclick="javascript:initiate(1)">Novice</div>
+	<div class="levels" id="l2" onclick="javascript:initiate(2)">Medium</div>
+	<div class="levels" id="l3" onclick="javascript:initiate(3)">Pro</div>
+	</div>
+<canvas id="playground"></canvas>
+<img id="back" src="img/back.jpg" style="display:none"/>
+<div id="overlay" onclick="hideit()"></div>
+<div id="popup"></div>
+</body>
+<script type="text/javascript" src="default.js"></script>
+</html>
